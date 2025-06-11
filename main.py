@@ -1,7 +1,7 @@
 import csv
 import os
 from PIL import Image, ImageDraw, ImageFont
-
+import img2pdf
 
 ids="final_templates"
 def generate_id(row):
@@ -21,7 +21,7 @@ def generate_id(row):
     employee_photo=Image.open(path)
     employee_photo=employee_photo.resize((121,121))
     template.paste(employee_photo, (176, 19))
-    filename = f"{row[0].replace(' ', '_')}.jpg"  # e.g., George_Cooper.jpg
+    filename = f"{row[0].replace(' ', '_')}.jpg"  
     save_path = os.path.join(ids, filename) 
     template.save(save_path)
     print(f"Saved: {save_path}")
@@ -34,3 +34,7 @@ with open('employee_data.csv','r') as employee_data:
     for row in csv_reader:
      print(row)
      generate_id(row)   
+
+image_files = [f for f in os.listdir("final_templates")]
+with open("output.pdf", "wb") as f:
+    f.write(img2pdf.convert([os.path.join("final_templates", i) for i in image_files]))
