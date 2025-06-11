@@ -1,5 +1,5 @@
 name,title,photo
-George Cooper, Product Manager, george.jpg
-Melissa Kimberly, HR Manager, Melissa.jpg
-Jared Smith, Junior Web Developer, jared.jpg
-Hassan Shaik, Systems Architect, hassan.jpg
+George Cooper,Product Manager,employee_images/george.jpg
+Melissa Kimberly,HR Manager,employee_images/Melissa.jpg
+Jared Smith,Junior Web Developer,employee_images/jared.jpg
+Hassan Shaik,Systems Architect,employee_images/hassan.jpg
